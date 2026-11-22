@@ -2,7 +2,7 @@
 
 **Autor:** Elmer Fuentes. **Revisión:** 2026-11-21.
 
-**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 4 de 10 completadas. El Excel registra 13 de 213 completadas e Historial 0.5.
+**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 5 de 10 completadas. El Excel registra 14 de 213 completadas e Historial 0.6.
 
 | Área | Avance comprobado | Archivos de referencia |
 | --- | --- | --- |
@@ -23,4 +23,4 @@
 
 **Perfiles S01 (EF-0012 a EF-0016):** Backend compila con cero errores y advertencias. Development cargó el archivo privado y el diagnóstico MySQL devolvió 200. Staging y Production arrancaron con variables de prueba y una ruta privada inválida. Swagger y diagnóstico devolvieron 404 en ambos. Staging rechazó TLS Preferred. La configuración de Docker Compose pasó la validación estática. Quedan pendientes el arranque del contenedor y la conexión autenticada con TLS remoto.
 
-**EF-0019:** `Database/MySql/00_Global/11_InstalacionCompleta/001_INSTALAR_EF_DEV.ps1` ordena esquema, tabla, registro de versión y validación. Los scripts se verificaron en MySQL DEV existente. Pendiente verificar el lanzador interactivo y adaptar los scripts aplicables a los otros motores al cierre.
+**EF-0019:** el lanzador interactivo `Database/MySql/00_Global/11_InstalacionCompleta/001_INSTALAR_EF_DEV.ps1` solicitó la contraseña de forma enmascarada, terminó con código 0 y confirmó la versión 1.0 y la colación esperada en MySQL DEV. Se añadieron los equivalentes del registro en SQL Server, PostgreSQL y Oracle. Su ejecución en instancias reales está pendiente.
