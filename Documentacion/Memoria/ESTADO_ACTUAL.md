@@ -2,7 +2,7 @@
 
 **Autor:** Elmer Fuentes. **Revisión:** 2026-11-21.
 
-**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 6 de 10 completadas. El Excel registra 15 de 213 completadas (7.04 %) e Historial 0.7.
+**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 7 de 10 completadas. El Excel registra 16 de 213 completadas (7.51 %) e Historial 0.8.
 
 | Área | Avance comprobado | Archivos de referencia |
 | --- | --- | --- |
@@ -26,3 +26,5 @@
 **EF-0019:** el lanzador interactivo `Database/MySql/00_Global/11_InstalacionCompleta/001_INSTALAR_EF_DEV.ps1` solicitó la contraseña de forma enmascarada, terminó con código 0 y confirmó la versión 1.0 y la colación esperada en MySQL DEV. Se añadieron los equivalentes del registro en SQL Server, PostgreSQL y Oracle. Su ejecución en instancias reales está pendiente.
 
 **EF-0018 completada:** GitHub Actions verificó formato .NET, compilación y prueba HTTP de Backend (44979862354), y análisis estático TypeScript, compilación y tres pruebas de Admin (44979865876). Los cambios están en los workflows de Backend y Frontend y en `Frontend/package.json`.
+
+**EF-0012 completada:** `Backend/Configuracion/compose.mysql-dev.yml` arrancó MySQL 8.4.13 en un proyecto y volumen aislados. El cliente de Windows se autenticó en `127.0.0.1:3307`, consultó `EF_DEV` y aplicó dos veces el DDL conservando la versión. La API conectada al MySQL de Windows mantuvo HTTP 200. Las tres historias restantes requieren un QA independiente con conexión y certificado verificables. Esta sesión carece de esa configuración.
