@@ -3,17 +3,14 @@
 !/.gitignore
 !/README.md
 !/AGENTS.md
-!/.codex/
-/.codex/*
-!/.codex/config.toml
-!/.codex/agents/
-/.codex/agents/*
-!/.codex/agents/*.toml
 !/Database/
 !/Documentacion/
 
 # Secretos y configuracion privada (no versionar)
+/.codex/
 /Documentacion/apoyo/
+/Documentacion/Agentes/
+/Documentacion/Arquitectura/02_Prompt_Maestro_Codex.md
 .env
 .env.*
 **/.env
