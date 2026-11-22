@@ -55,15 +55,7 @@ $env:ASPNETCORE_ENVIRONMENT='Development'
 dotnet run
 ```
 
-**QA remota sin codigo modificado**
-
-```powershell
-$env:ASPNETCORE_ENVIRONMENT='Development'
-$env:EF_CONFIG_FILE='C:\DEV\config-privada\ef.qa.env'
-dotnet run --project .\Backend\EF.Solutions.Web\EF.Solutions.Web.csproj
-```
-
-El archivo en `EF_CONFIG_FILE` debe contener credenciales solo de QA; no ejecutar scripts contra produccion.
+**QA remota:** configurar el host con `DOTNET_ENVIRONMENT=Staging` y las variables protegidas de QA. Ver [configuración de Backend](Backend/README.md).
 
 **Frontend**: el workspace de apps se implementara en fases posteriores; no hay una interfaz funcional ni scripts de ejecucion aun.
 
