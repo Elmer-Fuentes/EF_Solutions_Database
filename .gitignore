@@ -1,0 +1,38 @@
+# Alcance del repositorio Database y Documentacion
+/*
+!/.gitignore
+!/README.md
+!/AGENTS.md
+!/Database/
+!/Documentacion/
+
+# Secretos y configuracion privada (no versionar)
+/Documentacion/apoyo/
+.env
+.env.*
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+**/appsettings.Production.json
+**/appsettings.Local.json
+*.pfx
+*.pem
+*.key
+**/secrets/
+
+# .NET / IDE
+**/bin/
+**/obj/
+.vs/
+.idea/
+
+# React / Node
+**/node_modules/
+**/dist/
+**/build/
+**/.next/
+
+# OS
+.DS_Store
+Thumbs.db
