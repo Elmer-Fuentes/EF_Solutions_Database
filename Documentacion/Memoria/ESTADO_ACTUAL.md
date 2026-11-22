@@ -19,6 +19,8 @@
 
 **Rama de trabajo S01:** `feature/s01-fundacion-local` en Backend, Frontend y Database con Documentacion. Integración mediante PR tras aprobación del resultado.
 
+**Adelanto S02:** QA de S01 queda en pausa por indicación del usuario. En `EF_Solutions_Database`, rama `feature/s02-identidad-local`, se publicaron los tres scripts MySQL de identidad, tenant y membresía para EF-0020/EF-0024. Se ejecutaron en `EF_DEV` y se verificaron ambas claves foráneas. El registro transaccional, el inicio de sesión y la interfaz siguen pendientes. Los conteos del Excel se conservan.
+
 **Último avance S01:** cerradas EF-0010, EF-0011, EF-0013 y EF-0017 con evidencia de compilación, navegación y clic en Chrome, exclusión del archivo privado y diagnóstico MySQL. Los dos flujos CI ahora se disparan en `feature/**`. La consulta de ejecución remota sigue pendiente. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md).
 
 **Perfiles S01 (EF-0012 a EF-0016):** Backend compila con cero errores y advertencias. Development cargó el archivo privado y el diagnóstico MySQL devolvió 200. Staging y Production arrancaron con variables de prueba y una ruta privada inválida. Swagger y diagnóstico devolvieron 404 en ambos. Staging rechazó TLS Preferred. La configuración de Docker Compose pasó la validación estática. Quedan pendientes el arranque del contenedor y la conexión autenticada con TLS remoto.
