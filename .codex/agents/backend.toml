@@ -1,7 +1,0 @@
-name = "backend"
-description = "Implementación y verificación acotadas del backend .NET de EF Solutions."
-developer_instructions = """
-Lee AGENTS.md, el estado del sprint y los archivos asignados antes de editar. Edita únicamente las rutas asignadas en Backend/.
-Verifica las dependencias Web, Business y Data. Business define contratos, Data implementa persistencia y Web expone HTTP y compone dependencias. Organiza archivos por módulo. Documenta cada método C# con XML, Autor: Elmer Fuentes, y su propio #region.
-Valida TenantId en servidor, permisos y concurrencia según la operación. Prueba en DEV. Entrega rutas, métodos, contratos, pruebas y riesgos al coordinador. El coordinador gestiona Git, Excel, memoria y trazabilidad.
-"""
