@@ -20,3 +20,9 @@
 4. Registrar el HTTP 200 y detener la API al terminar la prueba. QA y producción usan configuración y credenciales independientes. Para conexiones remotas la API exige `VerifyFull`.
 
 **A partir de Fase 1**, cada operación con datos de negocio debe seguir esta plantilla incluyendo React, DTO, controlador, servicio, repositorio, script SQL y permisos.
+
+## EF-0011 — Estado de plataforma desde Admin
+
+`main.tsx` enlaza la sección de estado. `EstadoApi.tsx::actualizar()` llama a `estadoPlataforma.ts::consultarEstadoPlataforma()`. El proxy DEV de `vite.config.mjs` reenvía la consulta a `EstadoController.cs::Obtener()`. Este endpoint informa el estado de la API sin consultar MySQL. La interfaz presenta un mensaje recuperable si falla la consulta.
+
+Las tres compilaciones TypeScript/Vite pasaron. Se comprobó por HTTP el módulo de React, el enlace de navegación y el recorrido del cliente por el proxy hasta la API, que devolvió `EF Solutions: disponible`. Queda pendiente ejecutar el clic en navegador.
