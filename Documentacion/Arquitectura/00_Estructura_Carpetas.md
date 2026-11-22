@@ -3,7 +3,7 @@
 **Autor:** Elmer Fuentes  
 **Fecha:** 2026-11-21
 
-El repositorio tiene cuatro areas de primer nivel: `Backend`, `Frontend`, `Database`, `Documentacion`. No mantener una carpeta `EF_Solutions` adicional dentro de ellas.
+El espacio de trabajo tiene cuatro áreas de primer nivel: `Backend`, `Frontend`, `Database` y `Documentacion`. Mantenerlas directamente dentro de `EF_Solutions`.
 
 ## Backend
 
@@ -23,7 +23,7 @@ Centraliza el plan maestro, especificaciones, trazabilidad y manuales, con autor
 
 ## Git
 
-Un repositorio GitHub con ramas por cambio o funcionalidad, no una rama permanente por carpeta. Un PR puede tocar varias areas cuando un requerimiento lo exija, pero el responsable registra archivos y pruebas.
+GitHub contiene tres repositorios independientes: `EF_Solutions_Backend`, `EF_Solutions_Frontend` y `EF_Solutions_Database`. El tercero contiene las carpetas hermanas `Database/` y `Documentacion/`. Los cambios que abarcan varios repositorios comparten el ID de historia y enlazan sus revisiones y pruebas.
 
 ## Antes de aplicar cambios
 
