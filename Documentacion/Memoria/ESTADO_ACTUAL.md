@@ -22,3 +22,5 @@
 **Reanudación:** EF-0011 ya tiene navegación básica y consulta de estado desde Admin. Pasaron TypeScript/Vite y la prueba HTTP contra la API real. Queda pendiente el clic en navegador. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md). La autorización de trabajo y publicación sigue vigente al cambiar de conversación o cuenta.
 
 **Perfiles S01 (EF-0012 a EF-0016):** Backend compila con cero errores y advertencias. Development cargó el archivo privado y el diagnóstico MySQL devolvió 200. Staging y Production arrancaron con variables de prueba y una ruta privada inválida. Swagger y diagnóstico devolvieron 404 en ambos. Staging rechazó TLS Preferred. La configuración de Docker Compose pasó la validación estática. Quedan pendientes el arranque del contenedor y la conexión autenticada con TLS remoto.
+
+**EF-0019:** `Database/MySql/00_Global/11_InstalacionCompleta/001_INSTALAR_EF_DEV.ps1` ordena esquema, tabla, registro de versión y validación. Los scripts se verificaron en MySQL DEV existente. Pendiente verificar el lanzador interactivo y adaptar los scripts aplicables a los otros motores al cierre.
