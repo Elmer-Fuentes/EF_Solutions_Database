@@ -25,4 +25,4 @@
 
 `main.tsx` enlaza la sección de estado. `EstadoApi.tsx::actualizar()` llama a `estadoPlataforma.ts::consultarEstadoPlataforma()`. El proxy DEV de `vite.config.mjs` reenvía la consulta a `EstadoController.cs::Obtener()`. Este endpoint informa el estado de la API sin consultar MySQL. La interfaz presenta un mensaje recuperable si falla la consulta.
 
-Las tres compilaciones TypeScript/Vite pasaron. Se comprobó por HTTP el módulo de React, el enlace de navegación y el recorrido del cliente por el proxy hasta la API, que devolvió `EF Solutions: disponible`. Queda pendiente ejecutar el clic en navegador.
+Las tres compilaciones TypeScript/Vite pasaron. En Chrome se verificó que el enlace cambia la ubicación a `#estado-api` y que el clic en **Consultar estado** muestra `EF Solutions: disponible` mediante el proxy Vite y la API local.
