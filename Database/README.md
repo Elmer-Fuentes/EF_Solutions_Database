@@ -12,6 +12,8 @@ Para preparar el esquema local con el cliente MySQL ya instalado, ejecuta desde 
 
 El script usa loopback y solicita la contraseña administrativa. Ejecuta el esquema, la tabla de versiones, el registro de versión y la validación en orden. La cuenta de aplicación se aprovisiona por separado.
 
+Para el registro de versiones en SQL Server, PostgreSQL y Oracle, usa los scripts de `00_Global/` de cada motor en orden: tabla, datos iniciales y validación. Usar una base o esquema DEV ya aprovisionado. Oracle requiere una versión que admita `CREATE TABLE IF NOT EXISTS`. Las tres variantes tienen pendiente la ejecución en sus motores.
+
 Para cada proveedor, documentar esquemas, tablas, vistas, indices, funciones, procedimientos, migraciones, validaciones, reversiones y orden de instalacion. Cada archivo con correlativo, nombre del objeto, autor, fecha, version, dependencias y breve descripcion al estilo HAME.
 
 Cada objeto se versiona en su archivo numerado con su definición completa mediante `CREATE`. Al actualizarlo, se reemplaza la definición dentro del mismo archivo y se registra la versión. Git conserva el historial. La aplicación de cambios sobre una base existente se documenta como recreación versionada con respaldo, transferencia y validación de datos cuando corresponda. Ejecutar la eliminación de un objeto solo con autorización explícita.
