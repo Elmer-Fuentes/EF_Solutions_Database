@@ -6,7 +6,7 @@
 
 **Git:** tres repositorios independientes: `EF_Solutions_Backend` para Backend, `EF_Solutions_Frontend` para Frontend y `EF_Solutions_Database` para Database y Documentacion. En el tercer repositorio, `Database/` y `Documentacion/` se mantienen como carpetas hermanas. Los cambios que abarcan varios repositorios comparten el ID `EF-####` y enlazan sus revisiones.
 
-**Ramas:** integrar las ramas de trabajo en `develop` mediante pull requests. En cada repositorio afectado, promover a `main` el alcance aprobado y probado mediante un único pull request desde `release/*` por versión.
+**Ramas:** publicar el trabajo de cada sprint en su rama `feature/*`, creada desde `develop` en cada repositorio afectado. Integrar en `develop` mediante pull request solo después de que el usuario apruebe el resultado. En cada repositorio afectado, promover a `main` el alcance aprobado y probado mediante un único pull request desde `release/*` por versión.
 
 **Identidad y commits:** configurar `user.name` como `Elmer-Fuentes` y `user.email` como `delacruzelmer27@gmail.com` exclusivamente con `git config --local` en cada uno de los tres repositorios de EF Solutions antes del primer commit. Preservar la configuración global y las credenciales de DevOps. Crear un commit por archivo con el ID `EF-####` y una descripción breve y clara del cambio.
 
@@ -17,7 +17,7 @@
 3. `Web` puede referenciar Business y Data para composición; Data referencia Business; Business NO referencia Web ni Data.
 4. Carpetas agrupadas por negocio dentro de cada capa: `Controllers/Contratos`, `Services/Contratos`, `Repositories/Contratos`. No poner todos los archivos en una sola carpeta.
 5. Cada módulo tiene especificación, trazabilidad de extremo a extremo, pruebas y manual de uso.
-6. Documentación XML en C# y JSDoc en React para clases, métodos y operaciones importantes. Incluir `Autor: Elmer Fuentes`, descripción breve, entradas/salidas, errores relevantes y el archivo/método que conecta con la siguiente capa. Regiones C# cuando agrupen responsabilidades reales.
+6. En C#, envolver cada método y su documentación XML en un bloque `#region` / `#endregion` con un nombre descriptivo. Usar JSDoc en React para clases y operaciones importantes. Incluir `Autor: Elmer Fuentes`, propósito, entradas, salidas, errores relevantes y el archivo y método de la capa siguiente cuando corresponda.
 
 ## Seguridad
 
@@ -52,3 +52,25 @@
 26. Por cada tarea: inventario de archivos afectados -> plan -> desarrollo -> pruebas -> trazabilidad -> actualización docs -> reporte de pendientes.
 27. Evitar cambios no solicitados en módulos, tablas, roles o menús existentes. Reutilizar AppHameIG/legado solo tras revisión.
 28. No declarar trabajo listo si no se compila y pasa pruebas. Señalar riesgos y bloqueos concretos.
+29. Iniciar cada tarea en `Documentacion/Memoria/ESTADO_ACTUAL.md` y consultar la sección **Memoria persistente** de estas reglas.
+30. Editar los archivos existentes de forma puntual y seguir las convenciones del módulo. Crear archivos físicos solo cuando la funcionalidad lo requiera. Evitar la regeneración de archivos completos para cambios puntuales.
+31. Implementar los flujos con persistencia desde Data hacia Business y luego Web. Identificar primero el contrato de repositorio en Business y el SQL existente o necesario. Después implementar el repositorio en Data, las reglas y validaciones en Business y, por último, el controlador o endpoint en Web. En ejecución, Web llama a Business y Business utiliza el contrato que implementa Data.
+32. Dentro de cada capa, agrupar archivos físicos por módulo y dar a cada servicio, repositorio o controlador un archivo con nombre y responsabilidad claros. Por ejemplo, `Services/PanelDinamico/AlertasOperativasService.cs` y `Services/PanelDinamico/ControlPagosService.cs` exponen operaciones distintas. Conectar las capas mediante sus contratos e inyección de dependencias. Evitar carpetas genéricas de IA o archivos centrales que concentren operaciones de módulos distintos.
+33. Mantener un archivo SQL numerado por objeto con su definición completa mediante `CREATE`. Al cambiar el objeto, actualizar ese mismo archivo y registrar la versión y el historial, usando Git para conservar las definiciones anteriores. No usar `ALTER` para cambiar el DDL del objeto. Si la actualización debe aplicarse en una base existente, documentar un procedimiento versionado de recreación con respaldo, transferencia y validación de datos cuando corresponda. La edición del archivo no ejecuta un `DROP`. Ejecutar eliminaciones solo con autorización explícita para el ambiente y el objeto.
+34. En S02, implementar la emisión y validación de tokens de acceso, la gestión de sesiones y la verificación en servidor de la membresía del tenant. Los endpoints protegidos deben rechazar tokens inválidos o vencidos, y las pruebas deben cubrir el aislamiento entre tenants.
+35. Evaluar la concurrencia en cada operación que modifique datos. Proteger las ediciones contra pérdidas por escrituras simultáneas, usar transacciones cuando varias escrituras deban completarse juntas y hacer idempotentes las operaciones que puedan reintentarse con efectos duplicados. Incluir pruebas concurrentes y de reintento según el riesgo de la operación.
+36. La autorización continua del usuario cubre cambios locales, arranque de servicios de desarrollo, pruebas y actualizaciones del backlog respaldadas por evidencia. Continuar entre ciclos dentro del alcance acordado, detener las instancias temporales al terminar las pruebas y actualizar la memoria. Respetar las aprobaciones del entorno y las dependencias del sprint.
+37. Al cerrar un sprint con scripts SQL validados en MySQL, crear los equivalentes aplicables para SQL Server, PostgreSQL y Oracle en `Database/<Motor>/<Módulo>/<Tipo>/`. Versionar cada archivo en `EF_Solutions_Database` con el mismo ID de historia y un commit por archivo. Publicar mediante el flujo de ramas acordado. Registrar por motor el orden de aplicación y la evidencia de validación. La compatibilidad de cada variante requiere pruebas en el motor real.
+
+## Memoria persistente
+
+1. Al comenzar, leer `Documentacion/Memoria/ESTADO_ACTUAL.md`. Consultar únicamente los documentos relacionados con el módulo solicitado y las entradas pertinentes de la memoria.
+2. Si la documentación vigente cubre la tarea, limitar la inspección a las rutas relevantes. Ampliarla solo para verificar una dependencia o una discrepancia concreta.
+3. Trabajar exclusivamente sobre el sprint, el módulo y los archivos necesarios.
+4. Antes de modificar código, abrir los archivos físicos implicados e identificar las dependencias entre Web, Business y Data, y sus relaciones con SQL y Frontend cuando apliquen.
+5. Al finalizar, actualizar `ESTADO_ACTUAL.md` con el avance, las rutas modificadas y las pruebas reales. Registrar las decisiones nuevas en `DECISIONES.md`, los siguientes pasos en `PENDIENTES.md` y los cambios estables de contexto en `CONTEXTO.md`. Mantener la memoria breve, verificable y sin credenciales.
+6. Mantener el Excel maestro con evidencias reales por ID. Conservar las historias y el historial. Actualizar estados bajo la autorización continua del usuario cuando exista evidencia suficiente y verificar el libro después de guardarlo.
+7. Reutilizar el contexto disponible para documentos extensos que sigan vigentes. Releer solo las secciones que cambiaron o que hagan falta.
+8. Mostrar fragmentos y resúmenes de archivos y salidas de consola cuando sean suficientes.
+9. Repetir explicaciones anteriores solo cuando sean necesarias para resolver la tarea.
+10. Mantener las decisiones arquitectónicas aprobadas. Cualquier cambio requiere autorización y debe quedar registrado.
