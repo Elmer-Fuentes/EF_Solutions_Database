@@ -18,5 +18,3 @@
 **Último ciclo local:** se recompilaron Backend y las tres apps, y `npm audit` reportó cero vulnerabilidades conocidas. Swagger enumeró las tres rutas de Web, que devolvieron HTTP 200, incluido el diagnóstico autenticado de MySQL DEV. Los tres servidores Vite devolvieron HTTP 200 y sirvieron sus módulos React. `dotnet test` no reportó casos porque la solución aún carece de proyectos de prueba. Se detuvieron las instancias del ciclo y quedaron libres los puertos 50974 y 5173–5175.
 
 **Rama de trabajo S01:** `feature/s01-fundacion-local` en Backend, Frontend y Database con Documentacion. Integración mediante PR tras aprobación del resultado.
-
-**Coordinación:** [prompt del equipo](../Agentes/PROMPT_COORDINADOR.md) y cinco perfiles de proyecto en `.codex/agents/`. Hasta dos subagentes para trabajos independientes. S01 conserva sus historias y evidencias.
