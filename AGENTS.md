@@ -1,4 +1,4 @@
-# Reglas de ingeniería EF Solutions para Codex
+# Reglas de ingeniería de EF Solutions
 
 **Autor canónico de documentación:** Elmer Fuentes.
 
@@ -61,6 +61,7 @@
 35. Evaluar la concurrencia en cada operación que modifique datos. Proteger las ediciones contra pérdidas por escrituras simultáneas, usar transacciones cuando varias escrituras deban completarse juntas y hacer idempotentes las operaciones que puedan reintentarse con efectos duplicados. Incluir pruebas concurrentes y de reintento según el riesgo de la operación.
 36. La autorización continua del usuario cubre cambios locales, arranque de servicios de desarrollo, pruebas y actualizaciones del backlog respaldadas por evidencia. Continuar entre ciclos dentro del alcance acordado, detener las instancias temporales al terminar las pruebas y actualizar la memoria. Respetar las aprobaciones del entorno y las dependencias del sprint.
 37. Al cerrar un sprint con scripts SQL validados en MySQL, crear los equivalentes aplicables para SQL Server, PostgreSQL y Oracle en `Database/<Motor>/<Módulo>/<Tipo>/`. Versionar cada archivo en `EF_Solutions_Database` con el mismo ID de historia y un commit por archivo. Publicar mediante el flujo de ramas acordado. Registrar por motor el orden de aplicación y la evidencia de validación. La compatibilidad de cada variante requiere pruebas en el motor real.
+38. Mantener los perfiles, prompts y configuraciones de asistentes como herramientas locales. Versionar el código, las pruebas y la documentación técnica del producto.
 
 ## Memoria persistente
 
@@ -74,10 +75,3 @@
 8. Mostrar fragmentos y resúmenes de archivos y salidas de consola cuando sean suficientes.
 9. Repetir explicaciones anteriores solo cuando sean necesarias para resolver la tarea.
 10. Mantener las decisiones arquitectónicas aprobadas. Cualquier cambio requiere autorización y debe quedar registrado.
-
-## Coordinación de subagentes
-
-- Usar [el prompt de coordinación](Documentacion/Agentes/PROMPT_COORDINADOR.md) desde la raíz. Identificar el sprint en la memoria y extraer del Excel solo sus historias. Reutilizar el cierre de S00 registrado en su acta.
-- Delegar subtareas independientes a un máximo de dos subagentes simultáneos. Asignar a cada uno historia, archivos exclusivos, contrato, pruebas y resultado esperado. Cada agente debe leer su alcance antes de editar. Si la sesión no ofrece perfiles o herramientas de delegación, ejecutar los mismos roles en secuencia.
-- Backend, Frontend y Database editan únicamente su área asignada. `security` y `qa_docs` hacen revisiones focalizadas. Solo el coordinador edita el Excel, `Documentacion/Memoria/` y la trazabilidad, integra resultados y gestiona Git.
-- Entregar un informe con rutas y métodos reales, SQL relacionado, pruebas y riesgos de TenantId. Dar un plan breve antes de cambios extensos. Verificar el cierre antes de cambiar de sprint. Usar DEV y mantener fuera de prompts y reportes las credenciales y conexiones completas.
