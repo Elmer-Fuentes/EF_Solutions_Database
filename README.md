@@ -83,8 +83,7 @@ Las ramas de trabajo se integran en `develop` mediante pull requests. Para publi
 
 ## Documentacion
 
-- `AGENTS.md`: reglas para Codex.
-- `Documentacion/Arquitectura/02_Prompt_Maestro_Codex.md`: prompt de trabajo.
+- `AGENTS.md`: reglas de ingeniería y flujo de trabajo.
 - `Documentacion/Requerimientos/01_Plan_Maestro.md`: alcance acordado.
 - `Documentacion/Trazabilidad/03_Trazabilidad_Ejemplo.md`: ejemplo de rutas y metodos.
 
