@@ -1,0 +1,4 @@
+# Autor: Elmer Fuentes
+[agents]
+max_concurrent_threads_per_session = 2
+max_depth = 1
