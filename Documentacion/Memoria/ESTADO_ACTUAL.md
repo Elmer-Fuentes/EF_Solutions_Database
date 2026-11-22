@@ -2,7 +2,7 @@
 
 **Autor:** Elmer Fuentes. **Revisión:** 2026-11-21.
 
-**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 en trabajo técnico. El Excel registra 9 completadas y 204 pendientes, con evidencias de EF-0010 y EF-0018. MySQL DEV, Swagger y React ya tienen evidencia técnica.
+**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 4 de 10 completadas. El Excel registra 13 de 213 completadas e Historial 0.5.
 
 | Área | Avance comprobado | Archivos de referencia |
 | --- | --- | --- |
@@ -19,7 +19,7 @@
 
 **Rama de trabajo S01:** `feature/s01-fundacion-local` en Backend, Frontend y Database con Documentacion. Integración mediante PR tras aprobación del resultado.
 
-**Reanudación:** EF-0011 ya tiene navegación básica y consulta de estado desde Admin. Pasaron TypeScript/Vite y la prueba HTTP contra la API real. Queda pendiente el clic en navegador. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md). La autorización de trabajo y publicación sigue vigente al cambiar de conversación o cuenta.
+**Último avance S01:** cerradas EF-0010, EF-0011, EF-0013 y EF-0017 con evidencia de compilación, navegación y clic en Chrome, exclusión del archivo privado y diagnóstico MySQL. Los dos flujos CI ahora se disparan en `feature/**`. La consulta de ejecución remota sigue pendiente. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md).
 
 **Perfiles S01 (EF-0012 a EF-0016):** Backend compila con cero errores y advertencias. Development cargó el archivo privado y el diagnóstico MySQL devolvió 200. Staging y Production arrancaron con variables de prueba y una ruta privada inválida. Swagger y diagnóstico devolvieron 404 en ambos. Staging rechazó TLS Preferred. La configuración de Docker Compose pasó la validación estática. Quedan pendientes el arranque del contenedor y la conexión autenticada con TLS remoto.
 
