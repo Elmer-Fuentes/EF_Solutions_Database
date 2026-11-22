@@ -74,3 +74,10 @@
 8. Mostrar fragmentos y resúmenes de archivos y salidas de consola cuando sean suficientes.
 9. Repetir explicaciones anteriores solo cuando sean necesarias para resolver la tarea.
 10. Mantener las decisiones arquitectónicas aprobadas. Cualquier cambio requiere autorización y debe quedar registrado.
+
+## Coordinación de subagentes
+
+- Usar [el prompt de coordinación](Documentacion/Agentes/PROMPT_COORDINADOR.md) desde la raíz. Identificar el sprint en la memoria y extraer del Excel solo sus historias. Reutilizar el cierre de S00 registrado en su acta.
+- Delegar subtareas independientes a un máximo de dos subagentes simultáneos. Asignar a cada uno historia, archivos exclusivos, contrato, pruebas y resultado esperado. Cada agente debe leer su alcance antes de editar. Si la sesión no ofrece perfiles o herramientas de delegación, ejecutar los mismos roles en secuencia.
+- Backend, Frontend y Database editan únicamente su área asignada. `security` y `qa_docs` hacen revisiones focalizadas. Solo el coordinador edita el Excel, `Documentacion/Memoria/` y la trazabilidad, integra resultados y gestiona Git.
+- Entregar un informe con rutas y métodos reales, SQL relacionado, pruebas y riesgos de TenantId. Dar un plan breve antes de cambios extensos. Verificar el cierre antes de cambiar de sprint. Usar DEV y mantener fuera de prompts y reportes las credenciales y conexiones completas.
