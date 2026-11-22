@@ -2,7 +2,7 @@
 
 **Autor:** Elmer Fuentes. **Revisión:** 2026-11-21.
 
-**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 5 de 10 completadas. El Excel registra 14 de 213 completadas e Historial 0.6.
+**Punto de reanudación:** S00 completado con 9 de 9 historias. S01 tiene 6 de 10 completadas. El Excel registra 15 de 213 completadas (7.04 %) e Historial 0.7.
 
 | Área | Avance comprobado | Archivos de referencia |
 | --- | --- | --- |
@@ -25,4 +25,4 @@
 
 **EF-0019:** el lanzador interactivo `Database/MySql/00_Global/11_InstalacionCompleta/001_INSTALAR_EF_DEV.ps1` solicitó la contraseña de forma enmascarada, terminó con código 0 y confirmó la versión 1.0 y la colación esperada en MySQL DEV. Se añadieron los equivalentes del registro en SQL Server, PostgreSQL y Oracle. Su ejecución en instancias reales está pendiente.
 
-**EF-0018:** GitHub Actions completó los flujos base de Backend (44979105793) y Frontend (44979109129). Se añadieron y probaron localmente `Backend/Tests/IntegrationTests/VerificarApiDev.ps1` (contrato de plataforma, Swagger y HTTP 503 ante MySQL inaccesible) y `Frontend/ef-solutions-admin/tests/estadoPlataforma.test.mjs` (tres casos aprobados). Ambos flujos ya invocan estas pruebas en la rama de S01. Queda pendiente lint y verificar la ejecución remota de las nuevas pruebas.
+**EF-0018 completada:** GitHub Actions verificó formato .NET, compilación y prueba HTTP de Backend (44979862354), y análisis estático TypeScript, compilación y tres pruebas de Admin (44979865876). Los cambios están en los workflows de Backend y Frontend y en `Frontend/package.json`.
