@@ -19,7 +19,7 @@ $archivos = @(
 $sql = ($archivos | ForEach-Object {
     Get-Content -Encoding UTF8 -Raw -LiteralPath (Join-Path $modulo $_)
 }) -join "`n"
-$version = $sql | & $Cliente --no-defaults --protocol=TCP --host=127.0.0.1 "--port=$Puerto" "--user=$Usuario" --password --batch --skip-column-names --default-character-set=utf8mb4
+$version = & $Cliente --no-defaults --protocol=TCP --host=127.0.0.1 "--port=$Puerto" "--user=$Usuario" --password --batch --skip-column-names --default-character-set=utf8mb4 "--execute=$sql"
 if ($LASTEXITCODE -ne 0 -or @($version).Count -ne 1 -or $version -notmatch '^00_Global\s+1\.0\s+.+\s+utf8mb4_0900_ai_ci$') {
     throw 'La instalación de EF_DEV no superó la validación.'
 }
