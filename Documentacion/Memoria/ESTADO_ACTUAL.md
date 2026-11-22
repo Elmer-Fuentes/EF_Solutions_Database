@@ -19,4 +19,4 @@
 
 **Rama de trabajo S01:** `feature/s01-fundacion-local` en Backend, Frontend y Database con Documentacion. Integración mediante PR tras aprobación del resultado.
 
-**Reanudación:** la autorización de trabajo y publicación en la rama de S01 sigue vigente para cambios de conversación o cuenta. Continuar con EF-0011 según [PENDIENTES.md](PENDIENTES.md).
+**Reanudación:** EF-0011 ya tiene navegación básica y consulta de estado desde Admin. Pasaron TypeScript/Vite y la prueba HTTP contra la API real. Queda pendiente el clic en navegador. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md). La autorización de trabajo y publicación sigue vigente al cambiar de conversación o cuenta.
