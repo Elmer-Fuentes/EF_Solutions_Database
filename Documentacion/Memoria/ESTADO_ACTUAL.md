@@ -20,3 +20,5 @@
 **Rama de trabajo S01:** `feature/s01-fundacion-local` en Backend, Frontend y Database con Documentacion. Integración mediante PR tras aprobación del resultado.
 
 **Reanudación:** EF-0011 ya tiene navegación básica y consulta de estado desde Admin. Pasaron TypeScript/Vite y la prueba HTTP contra la API real. Queda pendiente el clic en navegador. Ver [trazabilidad](../Trazabilidad/03_Trazabilidad_Ejemplo.md) y [pendientes](PENDIENTES.md). La autorización de trabajo y publicación sigue vigente al cambiar de conversación o cuenta.
+
+**Perfiles S01 (EF-0012 a EF-0016):** Backend compila con cero errores y advertencias. Development cargó el archivo privado y el diagnóstico MySQL devolvió 200. Staging y Production arrancaron con variables de prueba y una ruta privada inválida. Swagger y diagnóstico devolvieron 404 en ambos. Staging rechazó TLS Preferred. La configuración de Docker Compose pasó la validación estática. Quedan pendientes el arranque del contenedor y la conexión autenticada con TLS remoto.
