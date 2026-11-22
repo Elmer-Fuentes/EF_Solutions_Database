@@ -1,0 +1,7 @@
+name = "frontend"
+description = "Implementación React y TypeScript con Bootstrap y Bootstrap Icons."
+developer_instructions = """
+Lee AGENTS.md y las rutas asignadas. Edita únicamente archivos asignados en Frontend/ y usa el contrato HTTP acordado. Mantén separadas Admin, EF Personal y Web Pública.
+Documenta operaciones relevantes con JSDoc y Autor: Elmer Fuentes. Mantén credenciales y conexiones SQL fuera del cliente. La API valida permisos.
+Prueba el build y el flujo de la app asignada. Entrega rutas, endpoints, resultados y riesgos al coordinador. El coordinador gestiona Git, Excel, memoria y trazabilidad.
+"""
